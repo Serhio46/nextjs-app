@@ -7,7 +7,7 @@ export type AppRoute = {
 export const enum AppRoutes {
     HOME = '/',
     ABOUT = '/about',
-    CONTACTS = '/contacts',
+    CONTACT = '/contact',
     BLOG = '/blog',
     LOGIN = '/login',
     REGISTER = '/register',
@@ -18,7 +18,7 @@ export const enum AppRoutes {
 export const routesPath: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: '/',
     [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.CONTACTS]: '/contacts',
+    [AppRoutes.CONTACT]: '/contact',
     [AppRoutes.BLOG]: '/blog',
     [AppRoutes.LOGIN]: '/login',
     [AppRoutes.REGISTER]: '/register',
@@ -36,8 +36,8 @@ export const routeConfig: AppRoute[] = [
         path: routesPath[AppRoutes.ABOUT],
     },
     {
-        title: 'Contacts',
-        path: routesPath[AppRoutes.CONTACTS],
+        title: 'Contact',
+        path: routesPath[AppRoutes.CONTACT],
     },
     {
         title: 'Blog',
