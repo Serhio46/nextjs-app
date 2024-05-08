@@ -11,7 +11,7 @@ const Blog = async () => {
             {posts.map(post => {
                 return (
                     <div className={cls.post} key={post.id}>
-                        <PostCard title={post.title} body={post.body} id={post.id} />
+                        <PostCard post={post} />
                     </div>
                 );
             })}
