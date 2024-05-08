@@ -3,7 +3,13 @@ import Link from 'next/link';
 
 import cls from './PostCard.module.css';
 
-const PostCard = () => {
+type PostCardProps = {
+    title: string;
+    body: string;
+    id: string;
+};
+
+const PostCard = ({ body, title, id }: PostCardProps) => {
     return (
         <div className={cls.container}>
             <div className={cls.top}>
@@ -18,9 +24,9 @@ const PostCard = () => {
                 <span className={cls.date}>05.07.2024</span>
             </div>
             <div className={cls.bottom}>
-                <h1 className={cls.title}>Title</h1>
-                <p className={cls.desc}>Desc</p>
-                <Link className={cls.link} href={`/blog/post`}>
+                <h1 className={cls.title}>{title}</h1>
+                <p className={cls.desc}>{body}</p>
+                <Link className={cls.link} href={`/blog/${id}`}>
                     READ MORE
                 </Link>
             </div>

@@ -12,7 +12,6 @@ type Props = {
 
 const NavLink = ({ path, children }: Props) => {
     const pathName = usePathname();
-    console.log(pathName === path);
     return (
         <Link href={path} className={`${cls.container} ${pathName === path && cls.active}`}>
             {children}

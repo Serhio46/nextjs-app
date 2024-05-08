@@ -1,22 +1,20 @@
 import PostCard from '@/components/PostCard';
+import { getPosts } from '@/api/getData';
 
 import cls from './blog.module.css';
 
-const Blog = () => {
+const Blog = async () => {
+    const posts = await getPosts();
+
     return (
         <div className={cls.container}>
-            <div className={cls.post}>
-                <PostCard />
-            </div>
-            <div className={cls.post}>
-                <PostCard />
-            </div>
-            <div className={cls.post}>
-                <PostCard />
-            </div>
-            <div className={cls.post}>
-                <PostCard />
-            </div>
+            {posts.map(post => {
+                return (
+                    <div className={cls.post} key={post.id}>
+                        <PostCard title={post.title} body={post.body} id={post.id} />
+                    </div>
+                );
+            })}
         </div>
     );
 };
