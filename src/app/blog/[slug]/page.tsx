@@ -5,6 +5,23 @@ import PostAuthor from '@/components/PostAuthor';
 import { getPost } from '@/api/getData';
 
 import cls from './SinglePost.module.css';
+import { Metadata, ResolvingMetadata } from 'next/types';
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    // read route params
+    const { slug } = params;
+
+    // fetch data
+    const post = await getPost(slug);
+
+    return {
+        title: post.title,
+        description: post.desc,
+        /* openGraph: {
+            images: ['/some-specific-page-image.jpg', ...previousImages],
+        }, */
+    };
+}
 
 type Props = {
     params: {
