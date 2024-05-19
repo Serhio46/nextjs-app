@@ -3,6 +3,7 @@
 import { Post } from '@/shared/models';
 import { connectToDb } from '@/utils';
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export const addPost = async (formData: FormData) => {
     const { title, author, slug, content } = Object.fromEntries(formData);
@@ -21,12 +22,12 @@ export const addPost = async (formData: FormData) => {
     }
 };
 
-export const deletePost = async (formData: FormData) => {
-    const { id } = Object.fromEntries(formData);
+export const deletePost = async (id: string) => {
     try {
         connectToDb();
         await Post.findByIdAndDelete(id);
         revalidatePath('/blogs');
+        redirect('/blogs');
     } catch (error) {
         console.error(error);
     }
