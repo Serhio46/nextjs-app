@@ -11,7 +11,7 @@ type PostProps = { post: PostType };
 
 export const Post = ({ post }: PostProps) => {
     const handleDelete = async () => {
-        await deletePost(post._id);
+        await deletePost(post.slug);
     };
     console.log(post);
 

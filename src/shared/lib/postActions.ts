@@ -22,10 +22,10 @@ export const addPost = async (formData: FormData) => {
     }
 };
 
-export const deletePost = async (id: string) => {
+export const deletePost = async (slug: string) => {
     try {
         connectToDb();
-        await Post.findByIdAndDelete(id);
+        await Post.deleteOne({ slug });
         revalidatePath('/blogs');
         redirect('/blogs');
     } catch (error) {
