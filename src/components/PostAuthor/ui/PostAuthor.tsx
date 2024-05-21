@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { getPostAuthor } from '@/api/getData';
+import { getPostAuthor } from '@/shared/lib/getData';
 import cls from './postAuthor.module.css';
 
 type Props = {

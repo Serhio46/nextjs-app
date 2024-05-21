@@ -1,5 +1,5 @@
 import { Post } from '@/components/Post';
-import { getPost } from '@/api/getData';
+import { getPost } from '@/shared/lib/getData';
 import { Metadata } from 'next/types';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

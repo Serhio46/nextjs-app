@@ -1,5 +1,5 @@
 import PostCard from '@/components/PostCard';
-import { getPosts } from '@/api/getData';
+import { getPosts } from '@/shared/lib/getData';
 import Link from 'next/link';
 
 import cls from './blog.module.css';

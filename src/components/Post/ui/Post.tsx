@@ -13,7 +13,6 @@ export const Post = ({ post }: PostProps) => {
     const handleDelete = async () => {
         await deletePost(post.slug);
     };
-    console.log(post);
 
     return (
         <div className={cls.container}>
